@@ -1,0 +1,10 @@
+services:
+  postgres:
+    container_name: transporte
+    image: postgres:18.4
+    environment:
+      POSTGRES_USER: ${BANCO_USUARIO}
+      POSTGRES_PASSWORD: ${BANCO_SENHA}
+      POSTGRES_DB: ${BANCO_NOME:-transporte}
+    ports:
+      - "127.0.0.1:5432:5432"
